@@ -1,0 +1,50 @@
+---
+slug: <kebab-case-id>
+status: draft            # draft | approved | in-progress | shipped
+type: feature              # feature | infra | refactor
+owner: <quem pediu ou é responsável>
+created: <YYYY-MM-DD>
+---
+
+# Spec: <Título>
+
+## Problema
+
+O que motiva isso existir? Que dor do usuário ou do negócio resolve?
+
+## Objetivo
+
+O que "pronto" significa, em uma frase.
+
+## Escopo
+
+### Está incluído
+-
+
+### Não está incluído
+-
+
+<!-- Se este projeto tem critério de negócio formal (ver .claude/context/product.md), preencha a seção abaixo. Se não, apague. -->
+## Impacto em negócio
+
+- <eixo 1, ex: confiabilidade>:
+- <eixo 2>:
+
+## Requisitos funcionais
+
+1.
+
+## Requisitos não-funcionais
+
+- Performance:
+- Segurança:
+<!-- Adicione linhas aqui: acessibilidade, SEO técnico, compliance — conforme aplicável a este projeto. -->
+
+## Critérios de aceite
+
+- [ ]
+- [ ]
+
+## Riscos e trade-offs
+
+## Fora de escopo / decisões adiadas
