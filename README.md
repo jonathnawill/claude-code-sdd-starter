@@ -16,7 +16,7 @@ Este repositório é deliberadamente **a espinha dorsal, não um projeto pronto*
 
 O que fica pronto:
 - A estrutura de documento de entrada (`CLAUDE.md`) que referencia o resto sem duplicar.
-- O conceito de documentação viva (`context/`) que qualquer sessão lê antes de propor mudança estrutural.
+- O conceito de documentação viva (`context/`) que qualquer sessão lê antes de propor mudança estrutural — incluindo um log de erros já resolvidos (`troubleshooting.md`), pra não redescobrir o mesmo bug em sessões diferentes.
 - O workflow de fases nomeadas com critério de saída objetivo.
 - Agentes especializados "núcleo" (arquitetura, backend, banco de dados, infra, segurança, performance, qualidade de código, testes, documentação) — presentes na maioria dos projetos de software, independente de domínio.
 - Templates de spec, ADR e PR.
@@ -27,6 +27,7 @@ O que **não** está aqui de propósito, porque é específico demais para gener
 - Agentes de frontend/UI/acessibilidade/SEO — só fazem sentido se o seu projeto tem interface pública.
 - Agentes de growth/monetização/conteúdo — só fazem sentido se o seu projeto é um produto com aquisição/monetização própria.
 - Qualquer scaffolding de domínio (ex: "criar uma nova ferramenta", "criar uma nova página") — isso nasce do seu produto, não de um template genérico.
+- **Hooks de enforcement automatizado** (scripts que bloqueiam comando perigoso, rodam lint a cada edição, etc.) — Claude Code suporta isso nativamente, mas um script é específico de SO/stack por natureza, então não cabe numa espinha genérica de markdown. Se seu projeto precisa de automação, não só disciplina documentada, veja a documentação oficial de [hooks do Claude Code](https://code.claude.com/docs/en/hooks) e adicione em `.claude/hooks/`.
 
 Se o seu projeto precisar desses papéis, escreva-os seguindo o mesmo formato dos agentes núcleo (frontmatter `name`/`description`/`tools`/`model` + responsabilidade + como trabalha + o que não faz) — o padrão se generaliza fácil, só o conteúdo é específico.
 
@@ -49,6 +50,8 @@ O caminho muda dependendo se o projeto já existe ou não.
    - `.claude/context/architecture.md` — como o código está organizado, convenções, o que é proibido.
    - `.claude/context/product.md` — o que o projeto é, para quem, o critério de decisão de negócio (se aplicável).
    - `CLAUDE.md` — o resumo/entrada, referenciando os três acima.
+
+   `.claude/context/troubleshooting.md` é diferente: começa vazio e cresce sozinho — não precisa preencher nada agora, só adicionar uma entrada depois que um bug real (não hipotético) for corrigido.
 3. Revise `.claude/workflows/sdd-workflow.md` e decida quais fases fazem sentido para o **perfil de risco** deste projeto especificamente — nem todo projeto precisa de todas as fases.
 4. Revise cada agente em `.claude/agents/` e substitua os `<placeholder>` de stack/convenção pelos valores reais. Delete o que não se aplica, adicione o que falta.
 5. Ajuste `.claude/checklists/` removendo itens que não se aplicam e adicionando os que faltam (ex: compliance, LGPD/GDPR, requisitos regulatórios do seu domínio).

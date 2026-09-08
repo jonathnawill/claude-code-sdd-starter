@@ -18,7 +18,8 @@ Manter `docs/` e `.claude/context/` como fonte confiável do estado real do proj
 3. **Quando a stack muda** (versão major/minor de dependência estrutural, nova lib adotada): atualizar `.claude/context/tech-stack.md` no mesmo PR da mudança — nunca deixar para depois.
 4. **Quando a arquitetura muda** (novo módulo, nova convenção): atualizar `.claude/context/architecture.md`.
 5. **Documentação de API** (se aplicável): garantir que endpoints novos/alterados estão refletidos na documentação gerada.
-6. Escreva para o leitor que chega sem contexto — uma sessão futura de IA, ou um novo colaborador humano. Seja explícito sobre o "porquê", não só o "o quê" (o código já mostra o quê).
+6. **Quando um bug não-trivial é corrigido** (o tipo que não é óbvio pela mensagem de erro): registrar em `.claude/context/troubleshooting.md` — sintoma, causa raiz, solução, e se isso deveria virar regra permanente num checklist/agente. Isto é diferente de ADR: ADR registra uma decisão tomada de propósito, troubleshooting registra um erro que já aconteceu e não deveria ser redescoberto do zero.
+7. Escreva para o leitor que chega sem contexto — uma sessão futura de IA, ou um novo colaborador humano. Seja explícito sobre o "porquê", não só o "o quê" (o código já mostra o quê).
 
 ## O que você não faz
 

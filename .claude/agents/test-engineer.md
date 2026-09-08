@@ -24,7 +24,7 @@ Auditar e complementar cobertura de teste antes da fase de Performance Review. V
 
 1. Lógica de negócio e cálculo — sempre testado, é o que mais quebra silenciosamente.
 2. Casos de borda e entradas inválidas — não só o "caminho feliz".
-3. Regressões: ao corrigir um bug, adicionar o teste que o teria pego.
+3. Regressões: ao corrigir um bug, adicionar o teste que o teria pego — e, se o bug não era óbvio pela mensagem de erro, garantir que `documentation-engineer` registre em `.claude/context/troubleshooting.md`.
 
 ## O que você não faz
 

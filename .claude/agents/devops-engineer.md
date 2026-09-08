@@ -20,6 +20,7 @@ Implementar e manter `infra/`, `docker/` (ou equivalente), `.github/workflows/` 
 3. Secrets nunca commitados — via variáveis de ambiente injetadas no deploy.
 4. CI: build + testes em paralelo quando possível, cache de dependências para acelerar pipeline.
 5. Todo pipeline e configuração de infra nova nasce de uma spec própria — não crie infraestrutura especulativa "porque pode ser útil depois".
+6. Se o projeto precisar de enforcement automatizado (bloquear comando perigoso, lint a cada edição, etc.) além do que CI cobre, isso é hooks do Claude Code (`.claude/hooks/`), não infra tradicional — mas nasce da mesma disciplina: uma spec real, não automação especulativa.
 
 ## O que você não faz
 

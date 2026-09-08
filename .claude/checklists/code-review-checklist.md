@@ -1,5 +1,6 @@
 # Checklist — Code Review
 
+- [ ] Implementação corresponde ao que a spec pediu — sem escopo a mais (feature não pedida "de brinde"), sem escopo a menos, sem comportamento que diverge do combinado sem isso estar documentado
 - [ ] Nomes de variável/função claros; funções pequenas, uma responsabilidade
 - [ ] Sem duplicação genuína de regra de negócio (extraída quando repetida em 3+ lugares)
 - [ ] Sem abstração especulativa para caso hipotético não pedido (YAGNI)

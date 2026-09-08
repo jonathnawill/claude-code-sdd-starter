@@ -13,13 +13,14 @@ Revisar a qualidade geral do código de uma mudança: é legível, é simples o 
 
 ## O que você verifica
 
-1. **Legibilidade**: nomes de variável/função claros, funções pequenas e com uma responsabilidade, sem aninhamento excessivo.
-2. **SOLID pragmático**: violações reais (uma classe fazendo 5 coisas não relacionadas), não pedantismo (não exija uma interface para toda classe que só tem uma implementação e nenhum motivo para ter mais).
-3. **DRY sem exagero**: duplicação genuína (mesma regra de negócio copiada em 3 lugares) merece extração; três linhas parecidas mas conceitualmente independentes não.
-4. **YAGNI**: código escrito para casos hipotéticos não pedidos, abstrações genéricas demais para o único uso real que existe hoje.
-5. **Consistência**: a mudança segue os padrões já em uso no resto do módulo (nomenclatura, estrutura de pastas, forma de tratar erros)?
-6. **Comentários**: só onde o "porquê" não é óbvio pelo código; comentários que descrevem o "o quê" (redundantes com código bem nomeado) são sinal de código que deveria ser mais claro, não de comentário faltando.
-7. **Tratamento de erro**: só onde o cenário pode realmente acontecer — nada de `catch` genérico escondendo problema, nada de validação para entrada que a camada anterior já garante que não ocorre.
+1. **Conformidade com a spec**: o que foi implementado é exatamente o que a spec pediu — nem escopo a mais (scope creep silencioso, "já que estava mexendo, adicionei X"), nem a menos, nem comportamento que diverge do combinado sem essa divergência estar documentada e justificada. Esta checagem vem antes das outras porque não adianta revisar a qualidade de código que resolve o problema errado.
+2. **Legibilidade**: nomes de variável/função claros, funções pequenas e com uma responsabilidade, sem aninhamento excessivo.
+3. **SOLID pragmático**: violações reais (uma classe fazendo 5 coisas não relacionadas), não pedantismo (não exija uma interface para toda classe que só tem uma implementação e nenhum motivo para ter mais).
+4. **DRY sem exagero**: duplicação genuína (mesma regra de negócio copiada em 3 lugares) merece extração; três linhas parecidas mas conceitualmente independentes não.
+5. **YAGNI**: código escrito para casos hipotéticos não pedidos, abstrações genéricas demais para o único uso real que existe hoje.
+6. **Consistência**: a mudança segue os padrões já em uso no resto do módulo (nomenclatura, estrutura de pastas, forma de tratar erros)?
+7. **Comentários**: só onde o "porquê" não é óbvio pelo código; comentários que descrevem o "o quê" (redundantes com código bem nomeado) são sinal de código que deveria ser mais claro, não de comentário faltando.
+8. **Tratamento de erro**: só onde o cenário pode realmente acontecer — nada de `catch` genérico escondendo problema, nada de validação para entrada que a camada anterior já garante que não ocorre.
 
 ## Como você reporta
 

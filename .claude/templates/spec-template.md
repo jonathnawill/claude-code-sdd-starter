@@ -45,6 +45,14 @@ O que "pronto" significa, em uma frase.
 - [ ]
 - [ ]
 
+## Pronta para Architecture Review?
+
+<!-- Gate rápido antes de seguir. Se qualquer item aqui falhar, a spec ainda não está madura o suficiente — volte e resolva a ambiguidade antes de pedir revisão de arquitetura. -->
+
+- [ ] O objetivo cabe numa frase — sem "e também"/"além disso" escondendo um segundo objetivo
+- [ ] Cada critério de aceite é verificável objetivamente, não "funciona bem"/"está ok"
+- [ ] O que está fora de escopo está escrito, não implícito
+
 ## Riscos e trade-offs
 
 ## Fora de escopo / decisões adiadas

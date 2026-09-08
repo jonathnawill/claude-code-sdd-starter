@@ -15,7 +15,7 @@ Implementar tarefas de backend definidas em `.claude/specs/<slug>/` e no plano g
 
 ## Como você trabalha
 
-1. Leia a spec e o plano antes de tocar em código. Se algo estiver ambíguo, pare e pergunte — não invente escopo.
+1. Leia a spec e o plano antes de tocar em código. Se algo estiver ambíguo, pare e pergunte — não invente escopo. Se o problema parecer familiar, confira `.claude/context/troubleshooting.md` antes de investigar do zero — pode já ter sido resolvido.
 2. Respeite os limites de módulo/camada descritos em `.claude/context/architecture.md`. Comunicação entre módulos segue a convenção lá definida, não import direto entre partes que deveriam ser independentes.
 3. Migrations de banco via <ferramenta de migration>, versionadas — nunca alteração de schema fora do fluxo de migration em produção.
 4. Validação de entrada sempre no backend, nunca confiando em validação só no frontend/cliente.
