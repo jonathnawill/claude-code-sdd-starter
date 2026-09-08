@@ -1,5 +1,7 @@
 # Claude Code SDD Starter
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Esqueleto genérico de Spec Driven Development (SDD) para projetos conduzidos com Claude Code — extraído de um projeto real, em produção, que já passou por dezenas de rodadas de expansão sem perder consistência arquitetural entre sessões de IA sem memória compartilhada entre si.
 
 ## Por que isso existe
@@ -38,9 +40,10 @@ O caminho muda dependendo se o projeto já existe ou não.
 
 1. Clone este repositório e copie `.claude/` e `CLAUDE.md` para a raiz do projeto novo:
    ```bash
-   gh repo clone jonathnawill/claude-code-sdd-starter /tmp/sdd-starter
+   git clone https://github.com/jonathnawill/claude-code-sdd-starter /tmp/sdd-starter
    cp -r /tmp/sdd-starter/.claude /tmp/sdd-starter/CLAUDE.md /caminho/do/seu/projeto/
    ```
+   (ou `gh repo clone jonathnawill/claude-code-sdd-starter`, se preferir o GitHub CLI)
 2. Abra uma sessão de Claude Code dentro do projeto e peça ajuda pra preencher, **nesta ordem** (cada um depende do anterior):
    - `.claude/context/tech-stack.md` — a stack real, com versões.
    - `.claude/context/architecture.md` — como o código está organizado, convenções, o que é proibido.
@@ -60,3 +63,11 @@ Use o prompt pronto em [`.claude/prompts/adoption-audit.md`](.claude/prompts/ado
 ## Princípio para adaptar, não copiar
 
 O valor deste padrão não está no conteúdo específico de outro projeto que você não viu — está na disciplina: **fases obrigatórias, critério de saída objetivo, documentação viva, revisão especializada por dimensão de risco**. Preserve isso. Descarte o resto sem culpa.
+
+## Contribuindo
+
+Contribuições são bem-vindas — veja [CONTRIBUTING.md](CONTRIBUTING.md) antes de abrir um PR (o repositório é deliberadamente pequeno e genérico; nem toda contribuição útil pertence ao núcleo). Este projeto segue o [Código de Conduta do Contribuidor](CODE_OF_CONDUCT.md).
+
+## Licença
+
+[MIT](LICENSE).

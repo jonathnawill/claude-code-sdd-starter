@@ -1,0 +1,14 @@
+# SO
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ambiente
+.env
+.env.local
