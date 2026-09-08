@@ -30,16 +30,32 @@ Se o seu projeto precisar desses papéis, escreva-os seguindo o mesmo formato do
 
 ## Como usar
 
-1. Copie `.claude/` e `CLAUDE.md` para a raiz do projeto novo.
-2. Preencha, nesta ordem (cada um depende do anterior):
+Um detalhe importante de mecânica antes dos passos: o Claude Code carrega `CLAUDE.md` e descobre tudo em `.claude/` (agentes, comandos, skills) **automaticamente**, em toda sessão, assim que esses arquivos existem na raiz do projeto. Não existe um passo de "ativar o padrão" — a partir do momento em que os arquivos estão lá, qualquer sessão já opera sob essas regras.
+
+O caminho muda dependendo se o projeto já existe ou não.
+
+### Projeto novo (seu, começando do zero)
+
+1. Clone este repositório e copie `.claude/` e `CLAUDE.md` para a raiz do projeto novo:
+   ```bash
+   gh repo clone jonathnawill/claude-code-sdd-starter /tmp/sdd-starter
+   cp -r /tmp/sdd-starter/.claude /tmp/sdd-starter/CLAUDE.md /caminho/do/seu/projeto/
+   ```
+2. Abra uma sessão de Claude Code dentro do projeto e peça ajuda pra preencher, **nesta ordem** (cada um depende do anterior):
    - `.claude/context/tech-stack.md` — a stack real, com versões.
    - `.claude/context/architecture.md` — como o código está organizado, convenções, o que é proibido.
    - `.claude/context/product.md` — o que o projeto é, para quem, o critério de decisão de negócio (se aplicável).
    - `CLAUDE.md` — o resumo/entrada, referenciando os três acima.
-3. Revise `.claude/workflows/sdd-workflow.md` e decida quais fases fazem sentido para o **perfil de risco** deste projeto especificamente — nem todo projeto precisa de todas as fases (ex: um serviço interno de baixo risco pode dispensar revisão de acessibilidade; um projeto regulado pode precisar de uma fase de compliance que não existe aqui).
+3. Revise `.claude/workflows/sdd-workflow.md` e decida quais fases fazem sentido para o **perfil de risco** deste projeto especificamente — nem todo projeto precisa de todas as fases.
 4. Revise cada agente em `.claude/agents/` e substitua os `<placeholder>` de stack/convenção pelos valores reais. Delete o que não se aplica, adicione o que falta.
 5. Ajuste `.claude/checklists/` removendo itens que não se aplicam e adicionando os que faltam (ex: compliance, LGPD/GDPR, requisitos regulatórios do seu domínio).
-6. Comece a trabalhar com `/spec`.
+6. A partir daqui, todo pedido de feature/mudança começa com `/spec` — o comando já é reconhecido automaticamente.
+
+### Projeto existente (time, empresa, código já em produção)
+
+**Não copie o esqueleto direto aqui.** Um projeto existente já tem convenções, processo de review, talvez um fluxo informal que funciona — atropelar isso de uma vez é pior do que não ter padrão nenhum, e afeta o time todo, não só quem está rodando o agente.
+
+Use o prompt pronto em [`.claude/prompts/adoption-audit.md`](.claude/prompts/adoption-audit.md): ele instrui o agente a **primeiro diagnosticar o que já existe** (o que já funciona, onde surgem os erros hoje, que convenções respeitar) e só depois **propor** uma versão adaptada deste padrão — nunca implementar ou reestruturar arquivos sem aprovação explícita de quem está pedindo.
 
 ## Princípio para adaptar, não copiar
 
